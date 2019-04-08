@@ -11,10 +11,11 @@ module.exports = {
             strings: { trim },
             dirExist,
             createProjectFolder,
-            copyBoilerplate
+            copyBoilerplate,
+            genCommons
         } = toolbox
 
-        let projectName = parameters.first;
+        let projectName = trim(parameters.first.toLocaleLowerCase())
 
         if (!projectName) {
             const result = await prompt.ask({
@@ -35,8 +36,11 @@ module.exports = {
             if (dirExist(projectName)) {
                 error(`Ya existe un directorio con el nombre ${projectName}`)
             } else {
+
                 createProjectFolder(projectName)
                 copyBoilerplate('react_boilerplate', projectName, { overwrite: true })
+                genCommons(projectName)
+
                 if (dirExist(projectName)) {
                     info('proyecto creado correctamente')
                 } else {

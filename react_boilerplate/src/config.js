@@ -1,14 +1,14 @@
 const ENV = process.env.REACT_APP_ENV
 
 const dev = {
-    baseUrl: 'http://owlock.dev.tevi.mx'
+    baseUrl: 'urldesarrollo/'
 };
 
 const prod = {
-    baseUrl: 'urlproduccion'
+    baseUrl: 'urlproduccion/'
 };
 
-const config = ENV==='develop' ? dev : prod;
+const config = ENV === 'develop' ? dev : prod;
 
 export default {
     // Configuraciones comunes
