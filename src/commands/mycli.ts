@@ -1,6 +1,5 @@
 
 import { GluegunToolbox } from 'gluegun'
-const figlet = require('figlet');
 
 module.exports = {
   name: 'mycli',
@@ -8,7 +7,7 @@ module.exports = {
     const { print,
       //insertInFile 
     } = toolbox
-
+    const figlet = require('figlet');
     figlet.text('MyCli', {
       font: 'Standard'
     }, function (err, data) {
