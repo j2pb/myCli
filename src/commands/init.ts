@@ -38,7 +38,7 @@ module.exports = {
             } else {
 
                 createProjectFolder(projectName)
-                copyBoilerplate('react_boilerplate', projectName, { overwrite: true })
+                copyBoilerplate('boilerplate', projectName, { overwrite: true })
                 genCommons(projectName)
 
                 if (dirExist(projectName)) {
