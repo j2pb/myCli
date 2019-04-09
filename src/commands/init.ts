@@ -12,7 +12,8 @@ module.exports = {
             dirExist,
             createProjectFolder,
             copyBoilerplate,
-            genCommons
+            genCommons,
+            filesystem
         } = toolbox
 
         let projectName = trim(parameters.first.toLocaleLowerCase())
@@ -38,7 +39,7 @@ module.exports = {
             } else {
 
                 createProjectFolder(projectName)
-                copyBoilerplate('boilerplate', projectName, { overwrite: true })
+                copyBoilerplate(filesystem.path(__dirname, '../../boilerplate'), projectName, { overwrite: true })
                 genCommons(projectName)
 
                 if (dirExist(projectName)) {
