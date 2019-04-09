@@ -7,13 +7,14 @@ module.exports = {
         const {
             parameters,
             prompt,
-            print: { info, error },
+            print: { info, error, spin },
             strings: { trim },
             dirExist,
             createProjectFolder,
             copyBoilerplate,
             genCommons,
-            filesystem
+            filesystem,
+            system
         } = toolbox
 
         let projectName = trim(parameters.first.toLocaleLowerCase())
@@ -41,7 +42,10 @@ module.exports = {
                 createProjectFolder(projectName)
                 copyBoilerplate(filesystem.path(__dirname, '../../boilerplate'), projectName, { overwrite: true })
                 genCommons(projectName)
-
+                const spinner = spin('Instalando!')
+                await system.run(`cd ${projectName}/ && npm install`, { trim: true })
+                spinner.stop()
+                // await system.run('node -v', { trim: true }
                 if (dirExist(projectName)) {
                     info('proyecto creado correctamente')
                 } else {
