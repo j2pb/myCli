@@ -8,6 +8,12 @@ A CLI for create-react-app with
 * react-spinners"
 * emotion
 
+## installation
+
+yarn install
+cd mycli
+yarn link
+
 # License
 
 MIT - see LICENSE
