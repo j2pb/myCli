@@ -5,7 +5,7 @@ module.exports = {
   name: 'mycli',
   run: async (toolbox: GluegunToolbox) => {
     const { print,
-      //insertInFile 
+      // insertInFile 
     } = toolbox
     const figlet = require('figlet');
     figlet.text('MyCli', {
@@ -18,6 +18,6 @@ module.exports = {
       }
       print.warning(data)
     });
-    //insertInFile(process.cwd() + '/readme.md', 'A CLI for mycli.', 'agregado desde cli')
+    // insertInFile(process.cwd() + '/readme.md', 'A CLI for mycli.', 'agregado desde cli')
   },
 }
