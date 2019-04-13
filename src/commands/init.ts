@@ -36,20 +36,20 @@ module.exports = {
             return
         } else {
             if (dirExist(projectName)) {
-                error(`Ya existe un directorio con el nombre ${projectName}`)
+                error(`A directory with the name ${projectName} already exists!`)
             } else {
 
                 createProjectFolder(projectName)
                 copyBoilerplate(filesystem.path(__dirname, '../../boilerplate'), projectName, { overwrite: true })
                 genCommons(projectName)
-                const spinner = spin('Instalando!')
+                const spinner = spin('Installing!')
                 await system.run(`cd ${projectName}/ && npm install`, { trim: true })
                 spinner.stop()
                 // await system.run('node -v', { trim: true }
                 if (dirExist(projectName)) {
-                    info('proyecto creado correctamente')
+                    info('project created correctly')
                 } else {
-                    error('Ha ocurrido un error creando el proyecto')
+                    error('Something went wrong...')
                 }
             }
         }

@@ -10,7 +10,7 @@ module.exports = {
     const figlet = require('figlet');
     figlet.text('MyCli', {
       font: 'Standard'
-    }, function (err, data) {
+    }, (err, data) => {
       if (err) {
         print.error('Something went wrong...');
         console.dir(err);
