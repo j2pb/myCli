@@ -9,7 +9,15 @@ module.exports = (toolbox: GluegunToolbox) => {
     toolbox.foo = () => {
         toolbox.print.info('called foo extension')
     }
-
+    toolbox.dirExist = (path) => {
+        return fs.exists(path)
+    }
+    toolbox.createProjectFolder = (dirName) => {
+        fs.dir(dirName)
+    }
+    toolbox.copyBoilerplate = (from, to, config) => {
+        fs.copy(from, to, config)
+    }
     // enable this if you want to read configuration in from
     // the current folder's package.json (in a "mycli" property),
     // mycli.config.json, etc.

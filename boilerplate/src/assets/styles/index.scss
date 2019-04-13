@@ -1,0 +1,18 @@
+//custom config
+@import 'custom';
+
+// Bootstrap library
+@import 'bootstrap/scss/bootstrap.scss';
+.ocultar{
+    display: none;
+ }
+ .loading{
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-color: #000;
+    opacity: 0.6;
+     z-index: 9999;
+ }
