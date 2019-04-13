@@ -10,9 +10,9 @@ A CLI for create-react-app with
 
 ## installation
 
-yarn install
-cd mycli
-yarn link
+* yarn install
+* cd mycli
+* yarn link
 
 # License
 
